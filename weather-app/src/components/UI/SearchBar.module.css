@@ -1,0 +1,114 @@
+.search-section {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(225, 225, 225, 0.1);
+    width: 50rem;
+    height: 4rem;
+    padding: 1rem;
+    margin: -0.5rem 0.5rem 2.1rem 0.5rem;
+    border-radius: 14px;
+}
+
+.search-section form {
+    position: relative;
+    width: 20rem;
+    border: 2px solid #555555;
+    margin: 0.3rem -0.2rem;
+    padding: 0.3rem 0;
+    border-radius: 8px;
+}
+
+.search-section form input {
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 0.9rem;
+    padding: 0 .5rem;
+    background: transparent;
+    color: #b4ffff;
+}
+
+.search-section form input::placeholder {
+    color: #ccc;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.5;
+}
+
+.search-section form button {
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.search-section form button i {
+    font-style: normal;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.search-section .exact-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 8rem;
+}
+
+.exact-search .btn-alt {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: none;
+    border-radius: 8px;
+}
+
+.exact-search .btn-alt i {
+    position: relative;
+    top: 4px;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.search-section .exact-search strong {
+    position: absolute;
+    left: -2rem;
+    transform: translateX(0);
+    opacity: 0;
+    background: #b9055d;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-section .exact-search strong::before {
+    position: absolute;
+    top: 8px;
+    right: -3px;
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #b9055d;
+    transform: rotate(45deg);
+}
+
+.exact-search:hover strong {
+    transform: translateX(-2rem);
+    opacity: 1;
+}

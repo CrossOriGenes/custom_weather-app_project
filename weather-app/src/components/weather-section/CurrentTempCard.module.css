@@ -1,0 +1,66 @@
+.temperature-card {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: normal;
+    /* background: rgba(225, 225, 225, 0.1); */
+    width: 50rem;
+    height: 30rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 14px;
+}
+
+.temperature-card_text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: #ffffd5;
+}
+
+.temperature-card_text .current-temp {
+    padding: 0 1rem;
+    font-size: 4.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.current-temp sup {
+    font-size: 2.3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.temperature-card_text .current-climate_location {
+    padding: 1rem;
+    color: #fff;
+}
+
+.current-climate_location h3 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.current-climate_location h5 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.temperature-card_icon {
+    position: relative;
+    margin: 1rem;
+    width: 13rem;
+    height: 12.1rem;
+    overflow: hidden;
+}
+
+.temperature-card_icon img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

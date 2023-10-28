@@ -1,0 +1,50 @@
+.temp-items {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    line-height: 1.1rem;
+    padding: 1rem 0;
+}
+
+.temp-items:nth-child(even) {
+    margin-left: 1.2rem;
+}
+
+.temp-items h3 {
+    position: relative;
+    display: inline-flex;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f2d048c9;
+}
+
+.temp-items h3 em {
+    /* font-size: 0.9rem; */
+    margin: 0 0.6rem;
+    letter-spacing: 0.5px;
+}
+
+.temp-items h3 span {
+    position: relative;
+    top: -0.3rem;
+    display: inline-block;
+    font-size: 2.1rem;
+    font-weight: 300;
+}
+
+.temp-items h2 {
+    position: relative;
+    margin: 0rem 1rem 1rem 2.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.temp-items h2 sub {
+    position: relative;
+    left: 0.3rem;
+    bottom: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 300;
+}
