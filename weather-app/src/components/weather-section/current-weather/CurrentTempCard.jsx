@@ -1,5 +1,6 @@
 import classes from "./CurrentTempCard.module.css";
-import currentWeatherIcon from '../../assets/current-weather-icon.png';
+// import currentWeatherIcon from '../../../assets/current-weather-icon.png';
+import currentWeatherIcon from '../../../assets/current-weather-icon.png';
 
 function CurrentTempCard() {
   return (

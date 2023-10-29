@@ -2,7 +2,11 @@
 import classes from "./Wrapper.module.css";
 
 function Wrapper(props) {
-  return <div className={classes.wrapper}>{props.children}</div>;
+  return (
+    <div style={props.style} className={classes.wrapper}>
+      {props.children}
+    </div>
+  );
 }
 
 export default Wrapper;

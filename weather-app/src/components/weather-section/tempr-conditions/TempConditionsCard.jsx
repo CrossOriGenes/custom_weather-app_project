@@ -1,29 +1,18 @@
 import classes from "./TempConditionsCard.module.css";
 
-import { motion } from "framer-motion";
+import WrapperBlock from "../../UI/WrapperBlock";
 import TempConditionsItem from "./TempConditionsItem";
-import Card from "../../UI/Card";
 import { initialConditions } from "../../../helpers/temp-conditions-list";
 
 function TempConditionsCard() {
   return (
-    <Card className={classes["temp-conditions_section"]}>
-      <header>
-        <h1>Temperature Conditions</h1>
-        <motion.button
-          type="button"
-          whileHover={{ scale: 1.1 }}
-          transition={{ type: "spring", stiffness: 900 }}
-        >
-          See more
-        </motion.button>
-      </header>
-      <div className={classes["temp-conditions_items"]}>
+    <WrapperBlock caption="Temperature Conditions" btnTitle="See more">
+      <div className={classes["temp-conditions_container"]}>
         {initialConditions.map((item) => (
           <TempConditionsItem key={item.caption} item={item} />
         ))}
       </div>
-    </Card>
+    </WrapperBlock>
   );
 }
 

@@ -1,7 +1,8 @@
 import Wrapper from "../components/UI/Wrapper";
-import CurrentTempCard from "../components/weather-section/CurrentTempCard";
+import CurrentTempCard from "../components/weather-section/current-weather/CurrentTempCard";
 import SearchBar from "../components/UI/SearchBar";
 import TempConditionsCard from "../components/weather-section/tempr-conditions/TempConditionsCard";
+import HourlyTemprSection from "../components/weather-section/hourly-tempr/HourlyTemprSection";
 
 const HomePage = () => {
   return (
@@ -10,6 +11,9 @@ const HomePage = () => {
       <Wrapper>
         <CurrentTempCard />
         <TempConditionsCard />
+      </Wrapper>
+      <Wrapper style={{ flexDirection: "column" }}>
+        <HourlyTemprSection />
       </Wrapper>
     </section>
   );

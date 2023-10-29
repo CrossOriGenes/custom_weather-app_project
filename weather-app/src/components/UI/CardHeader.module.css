@@ -1,0 +1,28 @@
+.card-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 0.7rem;
+    gap: 5rem;
+}
+
+.card-header h1 {
+    font-size: 0.83rem;
+    margin-right: 5rem;
+    color: #9d8d4dd0;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.card-header button {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.15rem 0.6rem;
+    outline: none;
+    border: none;
+    background: #0084ff;
+    border-radius: 12px;
+    color: #fff;
+    cursor: pointer;
+}
