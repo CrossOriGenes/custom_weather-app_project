@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 
-import classes from "./ForecastDataItem.module.css";
+import classes from "./HourlyTempDataItem.module.css";
 
-function ForecastDataItem({ itemData }) {
+function HourlyTempDataItem({ itemData }) {
   return (
     <div className={classes["hourly-dataItem"]}>
       <p>{itemData.timeslot}</p>
@@ -17,4 +17,4 @@ function ForecastDataItem({ itemData }) {
   );
 }
 
-export default ForecastDataItem;
+export default HourlyTempDataItem;

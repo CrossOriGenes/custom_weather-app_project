@@ -7,7 +7,11 @@ import classes from "./WrapperBlock.module.css";
 function WrapperBlock(props) {
   return (
     <Card className={classes["wrapper-block"]}>
-      <CardHeader caption={props.caption} btnTitle={props.btnTitle} />
+      <CardHeader
+        caption={props.caption}
+        btnTitle={props.btnTitle}
+        onClick={props.onClick}
+      />
       {props.children}
     </Card>
   );

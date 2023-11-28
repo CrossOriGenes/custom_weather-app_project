@@ -1,7 +1,7 @@
 import Card from "../../UI/Card";
 import CardHeader from "../../UI/CardHeader";
-import ForecastDataItem from "./ForecastDataItem";
-import { hourlyForecast as weatherToday } from "../../../helpers/hourly-forecast";
+import HourlyTempDataItem from "./HourlyTempDataItem";
+import { hourlyForecast as weatherToday } from "../../../helpers/forecast-list";
 
 import classes from "./HourlyTemprSection.module.css";
 
@@ -12,7 +12,7 @@ function HourlyTemprSection() {
       <ul className={classes["hourly-dataList"]}>
         {weatherToday.map((itemData) => (
           <li key={itemData.timeslot}>
-            <ForecastDataItem itemData={itemData} />
+            <HourlyTempDataItem itemData={itemData} />
           </li>
         ))}
       </ul>

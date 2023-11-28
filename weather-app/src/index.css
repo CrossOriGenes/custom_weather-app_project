@@ -9,6 +9,7 @@
 
 body {
   background-color: #051a29;
+  scroll-behavior: smooth;
 }
 
 main {
@@ -21,9 +22,6 @@ main {
   border-radius: 14px;
 }
 
-
-
-
 @media screen and (max-width: 380px) {
   .card {
       padding: 0.8rem;
@@ -35,3 +33,52 @@ main {
       padding: 0.4rem;
   }
 }
+
+/* ::-webkit-scrollbar {
+  height: 100%;
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #afd5e4;
+  height: 98%;
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #436776;
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #588192;
+}
+
+
+::-webkit-scrollbar-button:single-button {
+  background-color: #bbbbbb;
+  display: block;
+  border-style: solid;
+  height: 13px;
+  width: 16px;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  border-width: 0 7px 7px 7px;
+  background: transparent;
+  border-color: transparent transparent #8e8e8e transparent;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+  border-color: transparent transparent #fff transparent;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  border-width: 7px 7px 0 7px;
+  background: transparent;
+  border-color: #8e8e8e transparent transparent transparent;
+}
+
+::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+  border-color: #fff transparent transparent transparent;
+} */

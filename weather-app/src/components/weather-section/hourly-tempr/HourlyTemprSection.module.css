@@ -17,6 +17,11 @@
     margin: 0.2rem 0;
     padding: 1rem 0.5rem;
     overflow-x: scroll;
+    scroll-behavior: smooth;
+    -moz-box-shadow: -22px 0 24px 0 rgba(0, 0, 0, 0.278) inset;
+    -webkit-box-shadow: -22px 0 24px 0 rgba(0, 0, 0, 0.278) inset;
+    box-shadow: -22px 0 24px 0 rgba(0, 0, 0, 0.278) inset;
+    border-radius: inherit;
 }
 
 .hourly-dataList li {
@@ -38,15 +43,14 @@
 }
 
 .hourly-dataList::-webkit-scrollbar-track {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 .hourly-dataList::-webkit-scrollbar-thumb {
-	background-color: #5a7e8e;
-	border-radius: 14px;
+    background-color: #5a7e8e;
+    border-radius: 14px;
 }
 
 .hourly-dataList::-webkit-scrollbar-thumb:hover {
-	background-color: #80a6b6;
+    background-color: #80a6b6;
 }
-
