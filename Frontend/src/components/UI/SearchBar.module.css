@@ -112,3 +112,12 @@
     transform: translateX(-2rem);
     opacity: 1;
 }
+
+.search-section.invalid form {
+    border: 2px solid #ff5779;
+    /* background: #e84b6a6f; */
+}
+
+.search-section.invalid form input {
+    color: #ff5779;
+}

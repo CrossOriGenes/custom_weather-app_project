@@ -18,8 +18,8 @@ export const WEATHER_CONDITIONS = [
     { icon: faDroplet, caption: 'Humidity', value: 75, unit: '%' },
     { icon: faEye, caption: 'Visibility', value: 4, unit: 'km' },
     { icon: faSun, caption: 'UV Index', value: 8.0, unit: '' },
-    { icon: faTemperatureLow, caption: 'Maximum', value: 31.4, unit: '\u2103' },
-    { icon: faTemperatureHigh, caption: 'Minimum', value: 22.8, unit: '\u2103' },
+    { icon: faTemperatureHigh, caption: 'Maximum', value: 31.4, unit: '\u2103' },
+    { icon: faTemperatureLow, caption: 'Minimum', value: 22.8, unit: '\u2103' },
     { icon: faArrowsDownToLine, caption: 'Pressure', value: 1013.0, unit: 'mb' },
     { icon: faCloud, caption: 'Cloud', value: 50, unit: '%' },
 ];
