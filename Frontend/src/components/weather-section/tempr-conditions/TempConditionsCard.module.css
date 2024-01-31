@@ -1,5 +1,6 @@
 .temp-conditions_detail-section {
     background: #23344d;
+    /* background: #e1e1e11a; */
     padding: 1rem;
     border-radius: 14px;
     align-items: center;
@@ -22,3 +23,5 @@
 .temp-conditions_detail-section .temp-conditions_container {
     padding: 2.5rem 2rem .5rem 2rem;
 }
+
+

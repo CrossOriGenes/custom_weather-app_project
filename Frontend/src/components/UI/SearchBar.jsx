@@ -1,12 +1,18 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import { PiMagnifyingGlassDuotone } from "react-icons/pi";
 import { BiCurrentLocation } from "react-icons/bi";
-import { stagger, useAnimate } from "framer-motion";
+import { AnimatePresence, stagger, useAnimate } from "framer-motion";
+import { Alert, Snackbar } from "@mui/material";
 import useInput from "../../hooks/use-input";
+import { ConfirmationPopup } from "./ConfirmModal";
 
 import classes from "./SearchBar.module.css";
 
 function SearchBar(props) {
+  // const [coordinates, setCoordinates] = useState();
+  const [isLocationToggled, setIsLocationToggled] = useState();
+  const [open, setOpen] = useState(false);
   const [scope, animate] = useAnimate();
   const {
     value: enteredCity,
@@ -16,12 +22,24 @@ function SearchBar(props) {
     resetHandler,
   } = useInput((value) => /[0-9]/.test(value));
 
-  let searchBarClasses = `${classes["search-section"]}`;
+  const searchPreciseHandler = () => {
+    navigator.geolocation.getCurrentPosition((data) => {
+      setIsLocationToggled(false);
+      const { latitude, longitude } = data.coords;
+      props.onPreciseSearch(latitude, longitude);
+      // console.log(latitude, longitude);
+    });
+  };
+
+  const rejectPermissionHandler = () => {
+    setIsLocationToggled(false);
+    setOpen(true);
+  };
 
   const submitHandler = (event) => {
     event.preventDefault();
 
-    if (/[0-9]/.test(enteredCity)) {
+    if (/[0-9]/.test(enteredCity) || enteredCity.trim().length <= 1) {
       searchBarClasses = `${classes["search-section"]} ${classes.invalid}`;
       animate(
         "form",
@@ -31,40 +49,73 @@ function SearchBar(props) {
       return;
     } else {
       props.onSearch(enteredCity);
-      // console.log(enteredCity);
       resetHandler();
     }
   };
+
+  let searchBarClasses = `${classes["search-section"]}`;
 
   searchBarClasses = cityInvalid
     ? `${classes["search-section"]} ${classes.invalid}`
     : `${classes["search-section"]}`;
 
   return (
-    <div className={searchBarClasses} ref={scope}>
-      <form onSubmit={submitHandler}>
-        <input
-          type="text"
-          placeholder="Search for location"
-          onChange={cityNameChangeHandler}
-          onBlur={cityNameBlurHandler}
-          value={enteredCity}
-        />
-        <button type="submit">
-          <i>
-            <PiMagnifyingGlassDuotone />
-          </i>
-        </button>
-      </form>
-      <div className={classes["exact-search"]}>
-        <button type="button" className={classes["btn-alt"]}>
-          <i>
-            <BiCurrentLocation />
-          </i>
-        </button>
-        <strong>Use Precise location</strong>
+    <>
+      <div className={searchBarClasses} ref={scope}>
+        <form onSubmit={submitHandler}>
+          <input
+            type="text"
+            id="searchBox"
+            placeholder="Search for location"
+            onChange={cityNameChangeHandler}
+            onBlur={cityNameBlurHandler}
+            value={enteredCity}
+          />
+          <button type="submit">
+            <i>
+              <PiMagnifyingGlassDuotone />
+            </i>
+          </button>
+        </form>
+        <div className={classes["exact-search"]}>
+          <button
+            type="button"
+            className={classes["btn-alt"]}
+            onClick={() => setIsLocationToggled(true)}
+          >
+            <i>
+              <BiCurrentLocation />
+            </i>
+          </button>
+          <strong>Use Precise location</strong>
+        </div>
       </div>
-    </div>
+
+      <AnimatePresence>
+        {isLocationToggled && (
+          <ConfirmationPopup
+            title="Allow?"
+            description="Do you want to allow the browser to access your current location?"
+            onAllow={searchPreciseHandler}
+            onReject={rejectPermissionHandler}
+          />
+        )}
+      </AnimatePresence>
+
+      <Snackbar
+        open={open}
+        autoHideDuration={5000}
+        onClose={() => setOpen(false)}
+      >
+        <Alert
+          onClose={() => setOpen(false)}
+          severity="error"
+          sx={{ width: "100%" }}
+        >
+          You declined permission!
+        </Alert>
+      </Snackbar>
+    </>
   );
 }
 

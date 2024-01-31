@@ -16,7 +16,7 @@ const useRequest = () => {
             });
 
             if (!response.ok) {
-                throw new Error('Request failed!');
+                throw new Error(`${response.status} ${response.statusText}`);
             }
 
             const data = await response.json();

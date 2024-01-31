@@ -5,7 +5,7 @@
 import { faCloudBolt, faListUl, faMapLocationDot, faGear } from "@fortawesome/free-solid-svg-icons";
 
 const menuTabs = [
-    { icon: faCloudBolt, text: 'Weather', link: '/' },
+    { icon: faCloudBolt, text: 'Weather', link: '' },
     { icon: faListUl, text: 'Cities', link: 'recents' },
     { icon: faMapLocationDot, text: 'Map', link: 'map' },
     { icon: faGear, text: 'Settings', link: 'settings' },

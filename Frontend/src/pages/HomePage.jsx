@@ -1,51 +1,72 @@
+/* eslint-disable react-refresh/only-export-components */
+import { useContext } from "react";
+import { WeatherContext } from "../context/weather-data-context";
 import Wrapper from "../components/UI/Wrapper";
 import CurrentTempCard from "../components/weather-section/current-weather/CurrentTempCard";
 import SearchBar from "../components/UI/SearchBar";
 import TempConditionsCard from "../components/weather-section/tempr-conditions/TempConditionsCard";
 import HourlyTemprSection from "../components/weather-section/hourly-tempr/HourlyTemprSection";
 import WeeklyTemprSection from "../components/weather-section/weekly-tempr/WeeklyTemprSection";
-import { useEffect, useState } from "react";
 import useRequest from "../hooks/use-request";
 
 const HomePage = () => {
-  const [city, setCity] = useState("London");
-  const [weatherData, setWeatherData] = useState(null);
-  const { isError, isLoading, sendRequest: getRequestData } = useRequest();
+  const { isError, isLoading, sendRequest: getRequest } = useRequest();
+  const weatherCtx = useContext(WeatherContext);
 
-  const searchCityHandler = (cityName) => {
-    setCity(cityName);
-  };
-
-  useEffect(() => {
+  const getPreciseLocDataHandler = (lat, lon) => {
     const request = {
-      url: `http://api.weatherapi.com/v1/current.json?q=${city}&key=ec11eb36620b4c63ade183922232806`,
+      url: `http://api.weatherapi.com/v1/forecast.json?key=ec11eb36620b4c63ade183922232806&q=${lat},${lon}&days=7&aqi=yes&alerts=yes`,
     };
 
     const getData = (data) => {
-      setWeatherData(data);
+      weatherCtx.currentDataHandler(data);
+      weatherCtx.conDataListHandler(data);
+      weatherCtx.hrlyDataHandler(data);
+      weatherCtx.wklyDataHandler(data);
     };
 
-    // console.log(weatherData);
-    getRequestData(request, getData);
-  }, [city, getRequestData]);
+    getRequest(request, getData);
+    localStorage.removeItem("initialCityData");
+  };
+
+  const searchCityHandler = (cityName) => {
+    const request = {
+      url: `http://api.weatherapi.com/v1/forecast.json?key=ec11eb36620b4c63ade183922232806&q=${cityName}&days=7&aqi=yes&alerts=yes`,
+    };
+
+    const getData = (data) => {
+      weatherCtx.currentDataHandler(data);
+      weatherCtx.conDataListHandler(data);
+      weatherCtx.hrlyDataHandler(data);
+      weatherCtx.wklyDataHandler(data);
+    };
+
+    getRequest(request, getData);
+    localStorage.removeItem("initialCityData");
+  };
 
   return (
     <section style={{ marginLeft: "6rem" }}>
-      <SearchBar onSearch={searchCityHandler} />
+      <SearchBar
+        onSearch={searchCityHandler}
+        onPreciseSearch={getPreciseLocDataHandler}
+      />
       <Wrapper>
         <CurrentTempCard
-          data={weatherData}
+          // data={resData}
           isError={isError}
           isLoading={isLoading}
         />
-        <TempConditionsCard />
+        <TempConditionsCard isError={isError} isLoading={isLoading} />
       </Wrapper>
       <Wrapper style={{ flexDirection: "column", padding: "2rem 0" }}>
-        <HourlyTemprSection />
-        <WeeklyTemprSection />
+        <HourlyTemprSection isError={isError} isLoading={isLoading} />
+        <WeeklyTemprSection isError={isError} isLoading={isLoading} />
       </Wrapper>
     </section>
   );
 };
 
 export default HomePage;
+
+

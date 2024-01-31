@@ -17,6 +17,7 @@
     font-size: 1rem;
     font-weight: 600;
     color: #f2d048c9;
+    z-index: 2;
 }
 
 .temp-items h3 em {
@@ -38,6 +39,7 @@
     font-size: 2rem;
     font-weight: 600;
     color: #fff;
+    /* background-color: #374d6f; */
 }
 
 .temp-items h2 sub {

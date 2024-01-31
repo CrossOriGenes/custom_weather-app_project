@@ -9,6 +9,7 @@ aside {
     margin: 2rem;
     background-color: rgba(225, 225, 225, 0.2);
     border-radius: 14px;
+    z-index: 10;
 }
 
 aside .menuBtns {

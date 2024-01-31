@@ -1,0 +1,85 @@
+.prompt-classes {
+    position: fixed;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.prompt-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+}
+
+.prompt-text h2 {
+    width: 100%;
+    padding: 0.2rem 0 0.1rem auto;
+    position: relative;
+    display: inline-flex;
+    background: #f0f095;
+    border-radius: 6px;
+}
+
+.prompt-text h2 b {
+    position: relative;
+    top: 0.2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #684000;
+}
+
+.prompt-text h2 i {
+    position: relative;
+    top: 0.2rem;
+    margin-inline: 0.5rem;
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: #684000;
+}
+
+.prompt-text p {
+    padding: 1rem 0.1rem;
+    font-size: 0.9rem;
+    color: #323232;
+    font-weight: 500;
+}
+
+
+.prompt-actions {
+    margin: 0.5rem 0 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.prompt-actions button {
+    outline: none;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    background: #004bad;
+    border: 2px solid #004bad;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.prompt-actions button:hover {
+    background: #015bd1;
+    border: 2px solid #015bd1;
+}
+
+.prompt-actions .btn-alt {
+    color: #004bad;
+    background: none;
+    border: 2px solid #004bad;
+}
+
+.prompt-actions .btn-alt:hover {
+    color: #fff;
+}

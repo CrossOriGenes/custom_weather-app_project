@@ -8,8 +8,11 @@
 }
 
 body {
-  background-color: #051a29;
+  background: #051a29;
+  /* background: #e8f4ff; */
   scroll-behavior: smooth;
+  /* color: #222; */
+  color: #e8f4ff;
 }
 
 main {

@@ -13,6 +13,7 @@
     color: #9d8d4dd0;
     font-weight: 600;
     text-transform: uppercase;
+    word-spacing: 0.2rem;
 }
 
 .card-header button {
